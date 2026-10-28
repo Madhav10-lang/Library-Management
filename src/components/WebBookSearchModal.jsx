@@ -10,7 +10,7 @@ import Button from "./Button";
  * (Open Library & Google Books API), with image lazy loading and instant library import.
  */
 export function WebBookSearchModal({ isOpen, onClose, onAddBook }) {
-  const [query, setQuery] = useState("Ponniyin Selvan");
+  const [query, setQuery] = useState("Spider-Man");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -40,7 +40,7 @@ export function WebBookSearchModal({ isOpen, onClose, onAddBook }) {
 
   useEffect(() => {
     if (isOpen) {
-      searchWeb(query || "Tamil");
+      searchWeb(query || "Comics");
       if (inputRef.current) {
         setTimeout(() => inputRef.current?.focus(), 100);
       }
@@ -69,7 +69,7 @@ export function WebBookSearchModal({ isOpen, onClose, onAddBook }) {
       await onAddBook({
         title: book.title,
         author: book.author,
-        category: book.category || "Classic Literature",
+        category: book.category || "Superhero",
         year: Number(book.year) || new Date().getFullYear(),
         isbn: book.isbn,
         rating: Number(book.rating) || 4.8,
@@ -85,13 +85,17 @@ export function WebBookSearchModal({ isOpen, onClose, onAddBook }) {
   };
 
   const quickPicks = [
-    "Ponniyin Selvan",
-    "Thirukkural",
-    "Sivagamiyin Sabatham",
-    "Velpari",
-    "Tamil Classics",
-    "Science Fiction",
-    "History"
+    "Spider-Man",
+    "Batman",
+    "Watchmen",
+    "Iron Man",
+    "Hulk",
+    "Thor",
+    "Peanuts",
+    "Diary of a Wimpy Kid",
+    "Calvin and Hobbes",
+    "The Sandman",
+    "Bone"
   ];
 
   return (

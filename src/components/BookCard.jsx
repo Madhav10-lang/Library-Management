@@ -32,7 +32,7 @@ export function BookCard({ book, onEdit, onDelete }) {
       aria-label={`Book card for ${book.title} by ${book.author}`}
     >
       <div className="book-card-header">
-        <div className="book-icon" aria-hidden="true">📖</div>
+        <div className="book-icon" aria-hidden="true">{book.logo || "💥"}</div>
         {/* Reusable BookStatus Component */}
         <BookStatus status={isAvailable ? "available" : "borrowed"} />
       </div>
@@ -56,6 +56,11 @@ export function BookCard({ book, onEdit, onDelete }) {
       <p className="book-category">
         <strong>Category:</strong> {book.category}
       </p>
+      {book.level && (
+        <p className="book-level" style={{ fontSize: "0.82rem", color: "#38bdf8", margin: "2px 0 6px 0", fontWeight: 500 }}>
+          <strong>Level:</strong> <span style={{ background: "rgba(56, 189, 248, 0.15)", padding: "2px 6px", borderRadius: "6px" }}>{book.level}</span>
+        </p>
+      )}
       <p className="book-year">
         <strong>Published:</strong> {book.year}
       </p>

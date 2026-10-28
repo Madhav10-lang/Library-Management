@@ -20,7 +20,7 @@ export function Profile() {
     email: activeUser?.email || "",
     memberId: activeUser?.memberId || "",
     phone: activeUser?.phone || "",
-    branch: activeUser?.branch || "AK Central Library, Chennai",
+    branch: activeUser?.branch || "SK Central Library, Chennai",
     membershipTier: activeUser?.membershipTier || "Gold Scholar"
   });
 
@@ -35,7 +35,7 @@ export function Profile() {
         email: activeUser.email || "",
         memberId: activeUser.memberId || "",
         phone: activeUser.phone || "",
-        branch: activeUser.branch || "AK Central Library, Chennai",
+        branch: activeUser.branch || "SK Central Library, Chennai",
         membershipTier: activeUser.membershipTier || "Gold Scholar"
       });
     }
@@ -104,7 +104,7 @@ export function Profile() {
       email: activeUser?.email || "",
       memberId: activeUser?.memberId || "",
       phone: activeUser?.phone || "",
-      branch: activeUser?.branch || "AK Central Library, Chennai",
+      branch: activeUser?.branch || "SK Central Library, Chennai",
       membershipTier: activeUser?.membershipTier || "Gold Scholar"
     });
     setErrors({});
@@ -188,7 +188,7 @@ export function Profile() {
               value={formData.name}
               onChange={handleChange}
               onBlur={() => handleBlur("name")}
-              placeholder="e.g. Aravind Kumar"
+              placeholder="e.g. Member Name"
               error={touched.name ? errors.name : ""}
               icon="👤"
               helperText="Must be at least 3 characters."
@@ -220,10 +220,10 @@ export function Profile() {
               value={formData.memberId}
               onChange={handleChange}
               onBlur={() => handleBlur("memberId")}
-              placeholder="e.g. AK-LIB-101"
+              placeholder="e.g. SK-LIB-101"
               error={touched.memberId ? errors.memberId : ""}
               icon="🪪"
-              helperText="Official library card ID format: AK-LIB-XXX."
+              helperText="Official library card ID format: SK-LIB-XXX."
             />
 
             <Input
@@ -252,7 +252,7 @@ export function Profile() {
               value={formData.branch}
               onChange={handleChange}
               onBlur={() => handleBlur("branch")}
-              placeholder="e.g. AK Central Library, Chennai"
+              placeholder="e.g. SK Central Library, Chennai"
               error={touched.branch ? errors.branch : ""}
               icon="🏛️"
             />

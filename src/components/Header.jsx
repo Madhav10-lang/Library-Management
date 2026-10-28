@@ -25,11 +25,11 @@ function Header() {
     <header className="header" role="banner">
       <div className="header-container">
         {/* b) Use Link component to navigate to Home without reloading */}
-        <Link to="/" className="logo-brand" aria-label="AK Tamil Library - Return to Home">
-          <span className="logo-icon" aria-hidden="true">📚</span>
+        <Link to="/" className="logo-brand" aria-label="SK Comics Library - Return to Home">
+          <span className="logo-icon" aria-hidden="true">💥</span>
           <div className="logo-text">
-            <span className="brand-name">AK Tamil Library</span>
-            <span className="brand-sub">Book Search & Borrow Management</span>
+            <span className="brand-name">SK Comics Library</span>
+            <span className="brand-sub">Comics, Manga & Graphic Novels Hub</span>
           </div>
         </Link>
 

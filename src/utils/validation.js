@@ -70,7 +70,7 @@ export function validateMemberId(memberId) {
     return "Member ID must be at least 4 characters";
   }
   if (!MEMBER_ID_REGEX.test(clean)) {
-    return "Invalid Member ID format. Example format: AK-LIB-101";
+    return "Invalid Member ID format. Example format: SK-LIB-101";
   }
   return "";
 }

@@ -22,12 +22,12 @@ export function BorrowRequestPage() {
   const activeUser = currentUser || member;
 
   const [formData, setFormData] = useState({
-    borrowerName: activeUser?.name || "Aravind Kumar",
-    memberId: activeUser?.memberId || "AK-LIB-101",
-    email: activeUser?.email || "aravind.kumar@gmail.com",
+    borrowerName: activeUser?.name || "Member",
+    memberId: activeUser?.memberId || "SK-LIB-101",
+    email: activeUser?.email || "member@sklibrary.org",
     phone: activeUser?.phone || "+91 98765 43210",
     loanDuration: 14,
-    pickupLocation: activeUser?.branch || "AK Central Library, Chennai",
+    pickupLocation: activeUser?.branch || "SK Central Library, Chennai",
     agreeTerms: true
   });
 
@@ -208,7 +208,7 @@ export function BorrowRequestPage() {
                   value={formData.memberId}
                   onChange={handleChange}
                   onBlur={() => handleBlur("memberId")}
-                  placeholder="e.g. AK-LIB-101"
+                  placeholder="e.g. SK-LIB-101"
                   error={touched.memberId ? errors.memberId : ""}
                   icon="🪪"
                 />
@@ -275,7 +275,7 @@ export function BorrowRequestPage() {
                     onChange={handleChange}
                     className="form-input-control"
                   >
-                    <option value="AK Central Library, Chennai">AK Central Library, Chennai</option>
+                    <option value="SK Central Library, Chennai">SK Central Library, Chennai</option>
                     <option value="Madurai Heritage Branch">Madurai Heritage Branch</option>
                     <option value="Coimbatore Digital Commons">Coimbatore Digital Commons</option>
                   </select>

@@ -201,7 +201,7 @@ A modern library management web application built with **React**, **Vite**, **Ax
    - **Login Form**: Required fields, valid email or member ID pattern, min 4-character password/PIN.
    - **Borrow Request Form**: Borrower name, member ID format, email pattern, phone format (10-15 digits), loan duration, circulation terms agreement.
    - **Renewal Request Form**: Maximum renewals check (up to 2 loans), overdue cutoff threshold, required renewal reason (min 5 chars), terms checkbox.
-   - **Profile Form**: Full name (min 3 chars), email regex, phone regex, member ID format (`AK-LIB-XXX`), branch selection.
+   - **Profile Form**: Full name (min 3 chars), email regex, phone regex, member ID format (`SK-LIB-XXX`), branch selection.
 
 6. **Reusable `ErrorBoundary` Component (`ErrorBoundary.jsx`)**:
    - Class component implementing `static getDerivedStateFromError` and `componentDidCatch`.

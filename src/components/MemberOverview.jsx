@@ -22,11 +22,11 @@ function MemberOverview() {
       <div className="overview-welcome-card">
         <div className="welcome-avatar">👤</div>
         <div className="welcome-details">
-          <h2>Welcome back, {member?.name || "Aravind Kumar"}!</h2>
+          <h2>Welcome back, {member?.name || "Member"}!</h2>
           <p>
-            Member ID: <strong>{member?.memberId || "AK-LIB-101"}</strong> • Tier:{" "}
+            Member ID: <strong>{member?.memberId || "SK-LIB-101"}</strong> • Tier:{" "}
             <span className="tier-tag">{member?.membershipTier || "Gold Scholar"}</span> • Branch:{" "}
-            {member?.branch || "AK Central Library, Chennai"}
+            {member?.branch || "SK Central Library, Chennai"}
           </p>
           <div style={{ marginTop: "6px", fontSize: "12px", color: "var(--text-muted)" }}>
             ⚡ Profile loaded dynamically from <code>GET /api/members/current</code>
@@ -98,7 +98,7 @@ function MemberOverview() {
           <div className="empty-box" style={{ padding: "30px" }}>
             <p>You have no active borrowings at the moment.</p>
             <Link to="/books" className="btn-primary" style={{ marginTop: "12px", display: "inline-block" }}>
-              Explore Tamil Literature Catalog
+              Explore Comics Catalog
             </Link>
           </div>
         ) : (
@@ -166,7 +166,7 @@ function MemberOverview() {
       <div className="quick-links-grid">
         <div className="quick-card" onClick={() => navigate("/member/recommendations")}>
           <h4>✨ Personalized Recommendations</h4>
-          <p>Discover hand-picked Tamil titles based on your reading history.</p>
+          <p>Discover hand-picked comic titles based on your reading history.</p>
           <span className="card-arrow">Go to Recommendations →</span>
         </div>
 
@@ -178,7 +178,7 @@ function MemberOverview() {
 
         <div className="quick-card" onClick={() => navigate("/member/history")}>
           <h4>📜 Reading History</h4>
-          <p>Review every book you've borrowed and completed from AK Library.</p>
+          <p>Review every book you've borrowed and completed from SK Library.</p>
           <span className="card-arrow">View History →</span>
         </div>
       </div>

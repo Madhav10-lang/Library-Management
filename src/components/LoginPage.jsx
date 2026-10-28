@@ -124,7 +124,7 @@ export function LoginPage() {
         <div className="login-card">
           <div className="login-card-header">
             <span className="login-icon">🔐</span>
-            <h2>AK Library Member Access</h2>
+            <h2>SK Library Member Access</h2>
             <p>
               Sign in with your <strong>Member ID</strong> or <strong>Email</strong> to access
               protected circulation services, reading history, and recommendations.
@@ -221,10 +221,10 @@ export function LoginPage() {
                 if (touched.identifier) validateField("identifier");
               }}
               onBlur={() => handleBlur("identifier")}
-              placeholder="e.g., AK-LIB-101 or member@domain.com"
+              placeholder="e.g., SK-LIB-101 or member@domain.com"
               error={touched.identifier ? errors.identifier : ""}
               icon="👤"
-              helperText="Accepts official Library ID (AK-LIB-XXX) or registered email."
+              helperText="Accepts official Library ID (SK-LIB-XXX) or registered email."
             />
 
             <Input

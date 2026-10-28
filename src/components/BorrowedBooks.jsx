@@ -118,7 +118,7 @@ export function BorrowedBooks() {
         <div className="empty-box">
           <div className="empty-icon">📚</div>
           <h3>No borrowed books</h3>
-          <p>You do not have any books currently checked out from AK Library.</p>
+          <p>You do not have any books currently checked out from SK Library.</p>
         </div>
       ) : (
         <div className="borrowed-grid">

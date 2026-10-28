@@ -4,111 +4,213 @@ import { defineConfig } from 'vite'
 const SEED_BOOKS: any[] = [
   {
     id: 101,
-    title: "Ponniyin Selvan",
-    author: "Kalki Krishnamurthy",
-    category: "Historical Fiction",
-    year: 1955,
+    title: "The Amazing Spider-Man: Blue",
+    author: "Jeph Loeb & Tim Sale",
+    category: "Superhero",
+    level: "Accessible",
+    logo: "🕷️",
+    year: 2002,
     available: true,
     rating: 4.9,
-    isbn: "978-8184680010",
-    coverImage: "https://i.pinimg.com/736x/07/e4/3b/07e43b32d5aeb613a5f635de1ae5f8d4.jpg",
-    description: "A monumental 5-volume historical fiction classic portraying the early life of Rajaraja Chola I and the Chola empire intrigues."
+    isbn: "978-0785110712",
+    coverImage: "https://i.pinimg.com/736x/fc/b4/59/fcb4591185ab08498801d107f9af2ee8--spiderman-comic-amazing-spiderman.jpg",
+    description: "Widely recognized and accessible: Peter Parker recounts his early days as Spider-Man and his poignant, unforgettable love story with Gwen Stacy."
   },
   {
     id: 102,
-    title: "Sivagamiyin Sabatham",
-    author: "Kalki Krishnamurthy",
-    category: "Historical Fiction",
-    year: 1948,
+    title: "Batman: The Dark Knight Returns",
+    author: "Frank Miller",
+    category: "Dark Hero",
+    level: "Advanced",
+    logo: "🦇",
+    year: 1986,
     available: true,
-    rating: 4.8,
-    isbn: "978-8184680027",
-    coverImage: "https://rupapublications.co.in/images/1726833125.jpg",
-    description: "Set during the 7th century Pallava-Chalukya conflicts, centered around the sculptor Sivagami and King Narasimhavarman I."
+    rating: 4.9,
+    isbn: "978-1563893421",
+    coverImage: "https://static.dc.com/2023-04/press_040723_BM_Cv135_13511.jpg",
+    description: "Iconic superhero narratives with varied language styles: An aged Bruce Wayne emerges from retirement to restore justice to a dystopian, crime-ravaged Gotham City."
   },
   {
     id: 103,
-    title: "Thirukkural",
-    author: "Thiruvalluvar",
-    category: "Philosophy & Ethics",
-    year: 300,
+    title: "Watchmen",
+    author: "Alan Moore & Dave Gibbons",
+    category: "Graphic Novel",
+    level: "Advanced / Native-Level",
+    logo: "⏳",
+    year: 1986,
     available: true,
     rating: 5.0,
-    isbn: "978-8184680034",
-    coverImage: "https://shantibooks.in/cdn/shop/files/ThirukuralwrapperFront.jpg?v=1730263937",
-    description: "A timeless ancient masterpiece containing 1,330 couplets covering virtue (Aram), wealth (Porul), and love (Inbam)."
+    isbn: "978-0930289232",
+    coverImage: "https://m.media-amazon.com/images/M/MV5BMjc5NGFlMzMtZjkwZS00MzliLTg5NzktZDYzNGNhNjdjNzAzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    description: "Complex themes and vocabulary: A ground-breaking Hugo Award-winning deconstruction of superheroes set during a tense Cold War alternate reality."
   },
   {
     id: 104,
-    title: "Kaaval Kottam",
-    author: "Su. Venkatesan",
-    category: "Historical Fiction",
-    year: 2008,
-    available: true,
-    rating: 4.7,
-    isbn: "978-8184680041",
-    coverImage: "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=600&q=80",
-    description: "Sahitya Akademi award-winning epic novel chronicling 600 years of the history and guardianship of Madurai."
-  },
-  {
-    id: 105,
-    title: "Velpari",
-    author: "Su. Venkatesan",
-    category: "Epic Fiction",
-    year: 2018,
+    title: "Peanuts",
+    author: "Charles M. Schulz",
+    category: "Classic Comic Strip",
+    level: "Beginner",
+    logo: "🥜",
+    year: 1950,
     available: true,
     rating: 4.9,
-    isbn: "978-8184680058",
-    coverImage: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80",
-    description: "The gripping legend of the valiant chieftain Pari, king of Parambu Nadu, defying the combined might of the three great dynasties."
+    isbn: "978-1782761563",
+    coverImage: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    description: "Simple dialogue and everyday vocabulary: The timeless adventures of Charlie Brown, Snoopy, Linus, and the beloved Peanuts gang."
   },
   {
     id: 107,
-    title: "Parthiban Kanavu",
-    author: "Kalki Krishnamurthy",
-    category: "Historical Fiction",
-    year: 1943,
-    available: true,
-    rating: 4.7,
-    isbn: "978-8184680072",
-    coverImage: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80",
-    description: "The inspiring narrative of Chola Prince Vikraman fulfilling his father King Parthiban's dream of Chola restoration."
-  },
-  {
-    id: 108,
-    title: "Gopallapurathu Makkal",
-    author: "Ki. Rajanarayanan",
-    category: "Folk Literature",
-    year: 1989,
+    title: "Diary of a Wimpy Kid",
+    author: "Jeff Kinney",
+    category: "Illustrated Fiction",
+    level: "Beginner / Intermediate",
+    logo: "📓",
+    year: 2007,
     available: true,
     rating: 4.8,
-    isbn: "978-8184680089",
-    coverImage: "https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&w=600&q=80",
-    description: "A celebrated Sahitya Akademi-winning tale of migration, folk resilience, and life in the arid Karisal country."
+    isbn: "978-0141324906",
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780141324906-L.jpg",
+    description: "Text-heavy but simple, great for cultural context: Greg Heffley documents middle school survival, friend dynamics, and the notorious cheese touch."
   },
   {
     id: 109,
-    title: "Silapathikaram",
-    author: "Ilango Adigal",
-    category: "Classic Literature",
-    year: 500,
+    title: "Bone",
+    author: "Jeff Smith",
+    category: "Fantasy Adventure",
+    level: "Intermediate",
+    logo: "🦴",
+    year: 1991,
     available: true,
     rating: 4.9,
-    isbn: "978-8184680096",
-    coverImage: "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=600&q=80",
-    description: "One of the Five Great Epics of Tamil literature, following Kannagi's relentless quest for justice against the Pandyan king."
+    isbn: "978-1888422009",
+    coverImage: "https://covers.openlibrary.org/b/isbn/9781888422009-L.jpg",
+    description: "Easy-to-follow fantasy adventure: Fone Bone and his cousins get run out of Boneville and find themselves in a mysterious valley teeming with monsters and magic."
   },
   {
     id: 110,
-    title: "Kadal Pura",
-    author: "Sandilyan",
-    category: "Historical Fiction",
-    year: 1967,
+    title: "Calvin and Hobbes",
+    author: "Bill Watterson",
+    category: "Classic Comic Strip",
+    level: "Intermediate",
+    logo: "🐯",
+    year: 1985,
+    available: true,
+    rating: 5.0,
+    isbn: "978-0836220889",
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780836220889-L.jpg",
+    description: "Clever humor and philosophical themes: The imaginative escapades of an inquisitive six-year-old boy and his sardonic stuffed tiger come to life."
+  },
+  {
+    id: 111,
+    title: "The Sandman",
+    author: "Neil Gaiman",
+    category: "Dark Fantasy",
+    level: "Advanced / Native-Level",
+    logo: "🌙",
+    year: 1989,
+    available: true,
+    rating: 5.0,
+    isbn: "978-1401225759",
+    coverImage: "https://m.media-amazon.com/images/S/pv-target-images/81cbe8e7855fe8db91148c6003a14a53825b9652036f923e85d69852f3ee6f11.jpg",
+    description: "Rich, literary storytelling: Morpheus, Lord of the Dreaming, embarks on a dark, mythic journey traversing world mythology, folklore, and occult history."
+  },
+  {
+    id: 112,
+    title: "All-Star Superman",
+    author: "Grant Morrison & Frank Quitely",
+    category: "Superhero",
+    level: "Accessible",
+    logo: "🦸",
+    year: 2006,
+    available: true,
+    rating: 4.9,
+    isbn: "978-1401232375",
+    coverImage: "https://covers.openlibrary.org/b/isbn/9781401232375-L.jpg",
+    description: "Widely recognized and accessible: Facing terminal cellular over-saturation, Superman embarks on twelve heroic labors to safeguard humanity's future."
+  },
+  {
+    id: 113,
+    title: "X-Men: Days of Future Past",
+    author: "Chris Claremont & John Byrne",
+    category: "Superhero",
+    level: "Accessible",
+    logo: "🧬",
+    year: 1981,
     available: true,
     rating: 4.8,
-    isbn: "978-8184680102",
-    coverImage: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80",
-    description: "An adventurous historical naval romance following the expeditions of the Chola navy across Southeast Asian waters."
+    isbn: "978-0785164531",
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780785164531-L.jpg",
+    description: "Widely recognized and accessible: Mutants face total annihilation under Sentinel supremacy, triggering a desperate time-travel quest to save history."
+  },
+  {
+    id: 114,
+    title: "Ms. Marvel: No Normal",
+    author: "G. Willow Wilson & Adrian Alphona",
+    category: "Superhero",
+    level: "Accessible",
+    logo: "⚡",
+    year: 2014,
+    available: true,
+    rating: 4.8,
+    isbn: "978-0785190219",
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780785190219-L.jpg",
+    description: "Widely recognized and accessible: Kamala Khan, an ordinary teenager from Jersey City, discovers extraordinary shape-shifting polymorph powers."
+  },
+  {
+    id: 115,
+    title: "The Simpsons Comics",
+    author: "Matt Groening & Bongo Comics",
+    category: "Humor & Satire",
+    level: "Accessible",
+    logo: "🍩",
+    year: 1993,
+    available: true,
+    rating: 4.7,
+    isbn: "978-0060953782",
+    coverImage: "https://static.simpsonswiki.com/images/0/0d/Simpsons_Comics_245.jpg",
+    description: "Humorous and culturally rich: Laugh-out-loud satirical adventures featuring Homer, Bart, Lisa, and the delightfully eccentric citizens of Springfield."
+  },
+  {
+    id: 117,
+    title: "Iron Man: Extremis",
+    author: "Warren Ellis & Adi Granov",
+    category: "Superhero",
+    level: "Accessible",
+    logo: "🦾",
+    year: 2005,
+    available: true,
+    rating: 4.8,
+    isbn: "978-0785123385",
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780785123385-L.jpg",
+    description: "Tony Stark re-engineers his biological armor interface to battle cyber-enhanced terrorists as the Invincible Iron Man."
+  },
+  {
+    id: 118,
+    title: "The Incredible Hulk: Planet Hulk",
+    author: "Greg Pak & Carlo Pagulayan",
+    category: "Superhero",
+    level: "Accessible",
+    logo: "🟢",
+    year: 2006,
+    available: true,
+    rating: 4.9,
+    isbn: "978-0785120124",
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780785120124-L.jpg",
+    description: "Exiled into cosmic orbit by the Illuminati, the Green Goliath is forced into gladiatorial combat on the alien world of Sakaar."
+  },
+  {
+    id: 119,
+    title: "Thor: God of Thunder - The God Butcher",
+    author: "Jason Aaron & Esad Ribić",
+    category: "Superhero",
+    level: "Accessible",
+    logo: "🔨",
+    year: 2013,
+    available: true,
+    rating: 4.9,
+    isbn: "978-0785168423",
+    coverImage: "https://i.pinimg.com/originals/dc/4c/5a/dc4c5afa50e7b56041ccdfcb0bf08687.jpg",
+    description: "Across past, present, and future, the Mighty Thor battles Gorr the God Butcher to save gods across all realms."
   }
 ];
 
@@ -300,30 +402,30 @@ const mockRestApiPlugin = () => ({
         return res.end(JSON.stringify({
           success: true,
           member: {
-            memberId: "AK-LIB-101",
-            name: "Aravind Kumar",
-            email: "aravind.kumar@gmail.com",
+            memberId: "SK-LIB-101",
+            name: "Member",
+            email: "member@sklibrary.org",
             phone: "+91 98765 43210",
-            branch: "AK Central Library, Chennai",
+            branch: "SK Central Library, Chennai",
             membershipTier: "Gold Scholar",
             joinedDate: "2024-01-15",
             maxBooksAllowed: 5,
             activeLoansCount: 0,
-            preferredCategories: ["Historical Fiction", "Epic Fiction", "Philosophy & Ethics"]
+            preferredCategories: ["Superhero", "Graphic Novel", "Sci-Fi Comic", "Dark Hero"]
           }
         }));
       }
 
       // GET /api/recommendations
       if (req.method === 'GET' && pathname === '/api/recommendations') {
-        const category = params.get('category') || 'Historical Fiction';
+        const category = params.get('category') || 'Superhero';
         const recs = SEED_BOOKS.filter(b => b.category.toLowerCase() === category.toLowerCase()).slice(0, 3);
         res.statusCode = 200;
         return res.end(JSON.stringify({
           success: true,
           recommendations: recs.map((r, i) => ({
             ...r,
-            recommendationReason: `Top match in ${category} literature`,
+            recommendationReason: `Top match in ${category} comics`,
             matchScore: `${95 - i * 4}%`
           }))
         }));
@@ -345,15 +447,15 @@ const mockRestApiPlugin = () => ({
               return res.end(JSON.stringify({ success: false, error: 'Invalid credentials' }));
             }
             const user = {
-              memberId: id.includes('@') ? 'AK-LIB-999' : id.toUpperCase(),
+              memberId: id.includes('@') ? 'SK-LIB-999' : id.toUpperCase(),
               email: id.includes('@') ? id : `${id}@library.org`,
-              name: 'Aravind Kumar',
+              name: 'Member',
               role: 'Member',
               membershipTier: 'Gold Scholar'
             };
-            if (id === 'aravind.kumar@gmail.com' || id === 'ak-lib-101') {
-              user.memberId = 'AK-LIB-101';
-              user.email = 'aravind.kumar@gmail.com';
+            if (id === 'member@sklibrary.org' || id === 'sk-lib-101' || id === 'ak-lib-101') {
+              user.memberId = 'SK-LIB-101';
+              user.email = 'member@sklibrary.org';
             }
             const token = `srv_${user.memberId}_${Date.now().toString(36)}`;
             res.statusCode = 200;

@@ -6,20 +6,29 @@
 
 // Curated original covers for Tamil literary classics as web/instant fallbacks
 const CURATED_TAMIL_COVERS = {
+  // English Comics HD Covers
+  "spider-man": "https://i.pinimg.com/736x/fc/b4/59/fcb4591185ab08498801d107f9af2ee8--spiderman-comic-amazing-spiderman.jpg",
+  "batman": "https://static.dc.com/2023-04/press_040723_BM_Cv135_13511.jpg",
+  "watchmen": "https://m.media-amazon.com/images/M/MV5BMjc5NGFlMzMtZjkwZS00MzliLTg5NzktZDYzNGNhNjdjNzAzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "peanuts": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+  "diary of a wimpy kid": "https://covers.openlibrary.org/b/isbn/9780141324906-L.jpg",
+  "bone": "https://covers.openlibrary.org/b/isbn/9781888422009-L.jpg",
+  "calvin and hobbes": "https://covers.openlibrary.org/b/isbn/9780836220889-L.jpg",
+  "sandman": "https://m.media-amazon.com/images/S/pv-target-images/81cbe8e7855fe8db91148c6003a14a53825b9652036f923e85d69852f3ee6f11.jpg",
+  "superman": "https://covers.openlibrary.org/b/isbn/9781401232375-L.jpg",
+  "x-men": "https://covers.openlibrary.org/b/isbn/9780785164531-L.jpg",
+  "ms. marvel": "https://covers.openlibrary.org/b/isbn/9780785190219-L.jpg",
+  "simpsons": "https://static.simpsonswiki.com/images/0/0d/Simpsons_Comics_245.jpg",
+  "iron man": "https://covers.openlibrary.org/b/isbn/9780785123385-L.jpg",
+  "hulk": "https://covers.openlibrary.org/b/isbn/9780785120124-L.jpg",
+  "thor": "https://i.pinimg.com/originals/dc/4c/5a/dc4c5afa50e7b56041ccdfcb0bf08687.jpg",
+  // Classic reference covers
   "ponniyin selvan": "https://i.pinimg.com/736x/07/e4/3b/07e43b32d5aeb613a5f635de1ae5f8d4.jpg",
   "sivagamiyin sabatham": "https://rupapublications.co.in/images/1726833125.jpg",
   "thirukkural": "https://shantibooks.in/cdn/shop/files/ThirukuralwrapperFront.jpg?v=1730263937",
   "kaaval kottam": "https://upload.wikimedia.org/wikipedia/ta/9/98/Kaval_Kottam.jpg",
   "velpari": "https://upload.wikimedia.org/wikipedia/en/1/1a/Veera_Yuga_Nayagan_Velpari.jpg",
-  "parthiban kanavu": "https://upload.wikimedia.org/wikipedia/en/5/5b/Parthiban_Kanavu.jpg",
-  "gopallapurathu makkal": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1762904638i/5054534.jpg",
-  "silapathikaram": "https://covers.openlibrary.org/b/id/12588887-L.jpg",
-  "kadal pura": "https://upload.wikimedia.org/wikipedia/en/a/a9/Kadal_Pura_book_cover.jpg",
-  "vengayin maindhan": "https://upload.wikimedia.org/wikipedia/ta/3/38/%E0%AE%B5%E0%AF%87%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%88%E0%AE%AF%E0%AE%BF%E0%AE%A9%E0%AF%8D_%E0%AE%AE%E0%AF%88%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%A9%E0%AF%8D.jpg",
-  "sila nerangalil sila manithargal": "https://upload.wikimedia.org/wikipedia/en/d/d6/Sila_Nerangalil_Sila_Manithargal_%28novel%29.jpg",
-  "alai osai": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1535739673i/41580541.jpg",
-  "nandhipurathu nayagi": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1662883901i/17560590.jpg",
-  "moga mul": "https://cdn.exoticindia.com/images/products/original/books-2019-023/uaw070.jpg"
+  "parthiban kanavu": "https://upload.wikimedia.org/wikipedia/en/5/5b/Parthiban_Kanavu.jpg"
 };
 
 export const webBookService = {

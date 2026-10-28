@@ -1,12 +1,12 @@
 {
-  "name": "AK Library Management System",
-  "short_name": "AK Library",
-  "description": "Digital library management system for Tamil and classical literature cataloging, borrowing, and member services.",
+  "name": "SK Comics Library Management System",
+  "short_name": "SK Comics",
+  "description": "Digital comics & graphic novels library management system for comic cataloging, borrowing, and member services.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#2563eb",
-  "background_color": "#0f172a",
+  "theme_color": "#4f46e5",
+  "background_color": "#090d16",
   "categories": ["education", "books", "productivity"],
   "icons": [
     {
@@ -39,9 +39,9 @@
   ],
   "shortcuts": [
     {
-      "name": "Book Catalog",
+      "name": "Comic Catalog",
       "url": "/books",
-      "description": "Browse and search Tamil literature"
+      "description": "Browse and search English comics & graphic novels"
     },
     {
       "name": "Member Dashboard",

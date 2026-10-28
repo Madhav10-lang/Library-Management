@@ -45,7 +45,7 @@ function Recommendations() {
 
     try {
       const data = await bookService.fetchRecommendations({
-        memberId: member?.memberId || "AK-LIB-101",
+        memberId: member?.memberId || "SK-LIB-101",
         category: preferredCategory,
         limit: 3,
         signal: controller.signal

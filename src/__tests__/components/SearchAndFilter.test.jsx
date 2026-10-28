@@ -53,24 +53,24 @@ describe("Search and Filter (Requirement b)", () => {
     test("renders search input with correct placeholder", () => {
       renderWithProviders(<SearchBar />);
       const input = screen.getByPlaceholderText(
-        /search tamil books by title, keyword, or author/i
+        /search.*books by title, keyword, or author/i
       );
       expect(input).toBeInTheDocument();
     });
 
     test("input shows current search value", () => {
-      useLibrary.mockReturnValue(makeSearchContext({ search: "Ponniyin" }));
+      useLibrary.mockReturnValue(makeSearchContext({ search: "Spider-Man" }));
       renderWithProviders(<SearchBar />);
-      expect(screen.getByDisplayValue("Ponniyin")).toBeInTheDocument();
+      expect(screen.getByDisplayValue("Spider-Man")).toBeInTheDocument();
     });
 
     test("typing in search input calls setSearch with new value", () => {
       renderWithProviders(<SearchBar />);
       const input = screen.getByPlaceholderText(
-        /search tamil books by title, keyword, or author/i
+        /search.*books by title, keyword, or author/i
       );
-      fireEvent.change(input, { target: { value: "Thirukkural" } });
-      expect(mockSetSearch).toHaveBeenCalledWith("Thirukkural");
+      fireEvent.change(input, { target: { value: "Watchmen" } });
+      expect(mockSetSearch).toHaveBeenCalledWith("Watchmen");
     });
 
     test("clears search when clear button is clicked", () => {
@@ -131,10 +131,11 @@ describe("Search and Filter (Requirement b)", () => {
     test("changing category calls setCategory with new value", () => {
       renderWithProviders(<FilterPanel />);
       const categorySelect = screen.getByLabelText("Category:");
+      const targetCategory = INITIAL_BOOKS[0]?.category || "Superhero";
       fireEvent.change(categorySelect, {
-        target: { value: "Historical Fiction" }
+        target: { value: targetCategory }
       });
-      expect(mockSetCategory).toHaveBeenCalledWith("Historical Fiction");
+      expect(mockSetCategory).toHaveBeenCalledWith(targetCategory);
     });
 
     test("author dropdown contains unique authors from books", () => {
@@ -151,8 +152,9 @@ describe("Search and Filter (Requirement b)", () => {
     test("changing author filter calls setAuthor", () => {
       renderWithProviders(<FilterPanel />);
       const authorSelect = screen.getByLabelText("Author:");
-      fireEvent.change(authorSelect, { target: { value: "Kalki Krishnamurthy" } });
-      expect(mockSetAuthor).toHaveBeenCalledWith("Kalki Krishnamurthy");
+      const targetAuthor = INITIAL_BOOKS[0]?.author || "Jeph Loeb & Tim Sale";
+      fireEvent.change(authorSelect, { target: { value: targetAuthor } });
+      expect(mockSetAuthor).toHaveBeenCalledWith(targetAuthor);
     });
 
     test("availability dropdown has 'Available Only' option", () => {
@@ -181,32 +183,34 @@ describe("Search and Filter (Requirement b)", () => {
   describe("Search Filtering Logic", () => {
     test("filtering books by title search works correctly", () => {
       const books = INITIAL_BOOKS;
-      const query = "Thirukkural";
+      const targetBook = books[0];
+      const query = targetBook.title;
       const filtered = books.filter((b) =>
         b.title.toLowerCase().includes(query.toLowerCase())
       );
-      expect(filtered).toHaveLength(1);
-      expect(filtered[0].title).toBe("Thirukkural");
+      expect(filtered.length).toBeGreaterThan(0);
+      expect(filtered[0].title).toBe(targetBook.title);
     });
 
     test("filtering books by author search works correctly", () => {
       const books = INITIAL_BOOKS;
-      const query = "Kalki Krishnamurthy";
+      const targetAuthor = books[0].author;
       const filtered = books.filter(
         (b) =>
-          b.title.toLowerCase().includes(query.toLowerCase()) ||
-          b.author.toLowerCase().includes(query.toLowerCase())
+          b.title.toLowerCase().includes(targetAuthor.toLowerCase()) ||
+          b.author.toLowerCase().includes(targetAuthor.toLowerCase())
       );
       expect(filtered.length).toBeGreaterThan(0);
-      expect(filtered[0].author).toBe("Kalki Krishnamurthy");
+      expect(filtered[0].author).toBe(targetAuthor);
     });
 
-    test("filtering by category 'Epic Fiction' returns correct books", () => {
+    test("filtering by category returns correct books", () => {
+      const targetCategory = INITIAL_BOOKS[0].category;
       const filtered = INITIAL_BOOKS.filter(
-        (b) => b.category === "Epic Fiction"
+        (b) => b.category === targetCategory
       );
-      expect(filtered).toHaveLength(1);
-      expect(filtered[0].title).toBe("Velpari");
+      expect(filtered.length).toBeGreaterThan(0);
+      expect(filtered[0].category).toBe(targetCategory);
     });
 
     test("filtering by availability returns only available books", () => {
@@ -223,11 +227,12 @@ describe("Search and Filter (Requirement b)", () => {
     });
 
     test("case-insensitive search works", () => {
-      const query = "ponniyin";
+      const query = INITIAL_BOOKS[0].title.slice(0, 5).toLowerCase();
       const filtered = INITIAL_BOOKS.filter((b) =>
         b.title.toLowerCase().includes(query.toLowerCase())
       );
-      expect(filtered[0].title).toBe("Ponniyin Selvan");
+      expect(filtered.length).toBeGreaterThan(0);
+      expect(filtered[0].title).toBe(INITIAL_BOOKS[0].title);
     });
   });
 });

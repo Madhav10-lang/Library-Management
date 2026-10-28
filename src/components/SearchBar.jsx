@@ -46,8 +46,8 @@ export function SearchBar({ onOpenWebSearch }) {
           ref={searchInputRef}
           type="search"
           className="main-search-input"
-          placeholder="Search Tamil books by title, keyword, or author..."
-          aria-label="Search Tamil books by title, keyword, or author"
+          placeholder="Search English comics & books by title, keyword, or author..."
+          aria-label="Search English comics & books by title, keyword, or author"
           value={search}
           onChange={(e) => {
             setSearch(e.target.value);

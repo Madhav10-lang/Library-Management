@@ -33,9 +33,15 @@ function getStoredBooks() {
     if (data) {
       const parsed = JSON.parse(data);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        let hasCoverChanges = false;
         const filteredParsed = parsed.filter(
-          (b) => b.id !== 106 && b.title !== "En Iniya Iyanthira"
+          (b) =>
+            b.title !== "Garfield" &&
+            b.title !== "Sketch Monsters: Escape of the Scribbles" &&
+            b.title !== "Archie Comics" &&
+            b.title !== "Sapiens: A Graphic History" &&
+            b.title !== "En Iniya Iyanthira" &&
+            b.title !== "Ponniyin Selvan" &&
+            b.title !== "Sivagamiyin Sabatham"
         );
         if (filteredParsed.length !== parsed.length) {
           hasCoverChanges = true;
@@ -43,12 +49,12 @@ function getStoredBooks() {
         const updated = filteredParsed.map((book) => {
           const initial = INITIAL_BOOKS.find((b) => b.id === book.id || b.title === book.title);
           if (initial) {
-            if (book.coverImage !== initial.coverImage) {
+            if (book.coverImage !== initial.coverImage || book.logo !== initial.logo) {
               hasCoverChanges = true;
             }
             return {
               ...book,
-              coverImage: initial.coverImage
+              ...initial
             };
           }
           return book;
@@ -560,16 +566,16 @@ export async function mockRestApiHandler(method, path, options = {}) {
     // Match against valid member accounts
     const validMembers = [
       {
-        memberId: "AK-LIB-101",
-        email: "aravind.kumar@gmail.com",
-        name: "Aravind Kumar",
+        memberId: "SK-LIB-101",
+        email: "member@sklibrary.org",
+        name: "Member",
         role: "Member",
         membershipTier: "Gold Scholar",
-        branch: "AK Central Library, Chennai",
+        branch: "SK Central Library, Chennai",
         joinedDate: "2024-01-15",
         phone: "+91 98765 43210",
         maxBooksAllowed: 5,
-        preferredCategories: ["Historical Fiction", "Epic Fiction", "Philosophy & Ethics"]
+        preferredCategories: ["Superhero", "Graphic Novel", "Sci-Fi Comic", "Dark Hero"]
       }
     ];
 
@@ -584,14 +590,14 @@ export async function mockRestApiHandler(method, path, options = {}) {
       // Dynamic member login (any valid format)
       const isEmail = cleanId.includes("@");
       user = {
-        memberId: isEmail ? "AK-LIB-999" : cleanId.toUpperCase(),
+        memberId: isEmail ? "SK-LIB-999" : cleanId.toUpperCase(),
         email: isEmail ? cleanId : `${cleanId}@library.org`,
         name: isEmail
           ? cleanId.split("@")[0].replace(".", " ").split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
           : `Member ${cleanId.toUpperCase()}`,
         role: "Member",
         membershipTier: "Standard Reader",
-        branch: "AK Central Library, Chennai",
+        branch: "SK Central Library, Chennai",
         joinedDate: new Date().toISOString().split("T")[0],
         maxBooksAllowed: 3,
         preferredCategories: ["Historical Fiction"]

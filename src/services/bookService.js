@@ -119,7 +119,7 @@ export const bookService = {
    * Requirement e: Create borrowing record using API operations
    * POST /api/borrowings
    */
-  async borrowBookApi({ bookId, memberId = "AK-LIB-101", durationDays = 14, notes = "" }) {
+  async borrowBookApi({ bookId, memberId = "SK-LIB-101", durationDays = 14, notes = "" }) {
     const response = await apiClient.post("/borrowings", {
       bookId,
       memberId,
@@ -176,7 +176,7 @@ export const bookService = {
    * API-based recommendations
    * GET /api/recommendations
    */
-  async fetchRecommendations({ memberId = "AK-LIB-101", category = null, limit = 3, signal } = {}) {
+  async fetchRecommendations({ memberId = "SK-LIB-101", category = null, limit = 3, signal } = {}) {
     const params = { memberId, limit };
     if (category && category !== "All") {
       params.category = category;

@@ -1,9 +1,9 @@
 /**
- * Service Worker for AK Library Management System
+ * Service Worker for SK Library Management System
  * Provides offline support, app shell caching, and network resiliency
  */
 
-const CACHE_NAME = 'ak-library-v1';
+const CACHE_NAME = 'sk-library-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',

@@ -279,7 +279,7 @@ export const librarySlice = createSlice({
         author: book.author,
         category: book.category,
         holdDate: formatDate(new Date()),
-        memberId: state.member.memberId || "AK-LIB-101",
+        memberId: state.member.memberId || "SK-LIB-101",
         status: "Queue Position #1",
         notes: notes || "Priority reservation hold"
       };

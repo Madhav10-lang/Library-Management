@@ -17,7 +17,7 @@ function BorrowConfirmationPage() {
   const borrowItem = borrowedBooks.find((b) => String(b.id) === String(id));
   const holdItem = holdRequests.find((h) => String(h.bookId) === String(id));
 
-  const confirmationCode = `AK-${isHold ? "HLD" : "BRW"}-${id}-${new Date().getFullYear()}`;
+  const confirmationCode = `SK-${isHold ? "HLD" : "BRW"}-${id}-${new Date().getFullYear()}`;
 
   return (
     <div className="borrow-confirmation-page">
@@ -80,11 +80,11 @@ function BorrowConfirmationPage() {
               </div>
               <div className="receipt-row">
                 <span>Author:</span>
-                <strong>{book ? book.author : "Tamil Scholar"}</strong>
+                <strong>{book ? book.author : "Comic Creator"}</strong>
               </div>
               <div className="receipt-row">
                 <span>Borrower:</span>
-                <strong>{member?.name || "Aravind Kumar"} ({member?.memberId || "AK-LIB-101"})</strong>
+                <strong>{member?.name || "Member"} ({member?.memberId || "SK-LIB-101"})</strong>
               </div>
               <div className="receipt-row">
                 <span>Status:</span>

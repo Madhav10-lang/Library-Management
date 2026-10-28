@@ -125,21 +125,16 @@ function LibraryLayout() {
           <span className="toast-message">{operationFeedback.message}</span>
         </div>
       )}
-
-      {/* Requirement e: Semantic Main Landmark with accessible ID and focus target */}
       <main id="main-content" className="container" tabIndex="-1">
         <ErrorBoundary>
-          {/* Requirement a: Suspense wrapper for lazy-loaded routes */}
           <Suspense fallback={<PageLoadingFallback message="Loading library page..." />}>
             <Routes>
-              {/* Public Routes */}
               <Route path="/" element={<Home />} />
               <Route path="/books" element={<Home />} />
               <Route path="/book/:id" element={<BookDetailPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/error-test" element={<CrashTester />} />
 
-              {/* Protected Routes */}
               <Route
                 path="/borrowed"
                 element={

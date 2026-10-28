@@ -5,6 +5,103 @@ import { LibraryContext } from "../../context/libraryContextInstance";
  * Category-based rich gradient color palettes & motif patterns
  */
 const CATEGORY_THEMES = {
+  "Superhero": {
+    bg: "linear-gradient(135deg, #991b1b 0%, #ef4444 50%, #3b82f6 100%)",
+    accent: "#fef2f2",
+    icon: "🦸‍♂️",
+    badge: "Superhero"
+  },
+  "Dark Hero": {
+    bg: "linear-gradient(135deg, #09090b 0%, #1e1b4b 50%, #475569 100%)",
+    accent: "#f8fafc",
+    icon: "🦇",
+    badge: "Dark Hero"
+  },
+  "Graphic Novel": {
+    bg: "linear-gradient(135deg, #b45309 0%, #f59e0b 50%, #312e81 100%)",
+    accent: "#fef3c7",
+    icon: "⏳",
+    badge: "Graphic Novel"
+  },
+  "Classic Comic Strip": {
+    bg: "linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%)",
+    accent: "#fffbeb",
+    icon: "🥜",
+    badge: "Comic Strip"
+  },
+  "Humor & Comic Strip": {
+    bg: "linear-gradient(135deg, #c2410c 0%, #ea580c 50%, #f97316 100%)",
+    accent: "#fff7ed",
+    icon: "🐱",
+    badge: "Humor Strip"
+  },
+  "Kids Graphic Novel": {
+    bg: "linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%)",
+    accent: "#faf5ff",
+    icon: "👾",
+    badge: "Kids Graphic"
+  },
+  "Illustrated Fiction": {
+    bg: "linear-gradient(135deg, #334155 0%, #475569 50%, #64748b 100%)",
+    accent: "#f8fafc",
+    icon: "📓",
+    badge: "Illustrated"
+  },
+  "Teen Humor": {
+    bg: "linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #f43f5e 100%)",
+    accent: "#f0fdf4",
+    icon: "🎸",
+    badge: "Teen Humor"
+  },
+  "Fantasy Adventure": {
+    bg: "linear-gradient(135deg, #15803d 0%, #16a34a 50%, #84cc16 100%)",
+    accent: "#f7fee7",
+    icon: "🦴",
+    badge: "Fantasy"
+  },
+  "Dark Fantasy": {
+    bg: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #4c1d95 100%)",
+    accent: "#ede9fe",
+    icon: "🌙",
+    badge: "Dark Fantasy"
+  },
+  "Humor & Satire": {
+    bg: "linear-gradient(135deg, #a16207 0%, #eab308 50%, #facc15 100%)",
+    accent: "#fefce8",
+    icon: "🍩",
+    badge: "Satire"
+  },
+  "Nonfiction Graphic": {
+    bg: "linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%)",
+    accent: "#ecfdf5",
+    icon: "🌍",
+    badge: "Nonfiction"
+  },
+  "Cosmic Saga": {
+    bg: "linear-gradient(135deg, #3730a3 0%, #6366f1 50%, #ec4899 100%)",
+    accent: "#ede9fe",
+    icon: "🌌",
+    badge: "Cosmic"
+  },
+  "Sci-Fi Comic": {
+    bg: "linear-gradient(135deg, #0f172a 0%, #0891b2 50%, #06b6d4 100%)",
+    accent: "#cffafe",
+    icon: "⚡",
+    badge: "Sci-Fi"
+  },
+  "Adventure Comic": {
+    bg: "linear-gradient(135deg, #14532d 0%, #16a34a 50%, #eab308 100%)",
+    accent: "#dcfce7",
+    icon: "🚀",
+    badge: "Adventure"
+  },
+  "Action Comedy": {
+    bg: "linear-gradient(135deg, #991b1b 0%, #dc2626 50%, #fbbf24 100%)",
+    accent: "#fee2e2",
+    icon: "💥",
+    badge: "Action Comedy"
+  },
+  // Backward compatibility
   "Historical Fiction": {
     bg: "linear-gradient(135deg, #78350f 0%, #b45309 50%, #f59e0b 100%)",
     accent: "#fef3c7",
@@ -16,38 +113,14 @@ const CATEGORY_THEMES = {
     accent: "#dbeafe",
     icon: "📜",
     badge: "Philosophy"
-  },
-  "Epic Fiction": {
-    bg: "linear-gradient(135deg, #831843 0%, #db2777 50%, #f472b6 100%)",
-    accent: "#fce7f3",
-    icon: "⚔️",
-    badge: "Epic"
-  },
-  "Science Fiction": {
-    bg: "linear-gradient(135deg, #0f172a 0%, #0891b2 50%, #06b6d4 100%)",
-    accent: "#cffafe",
-    icon: "🚀",
-    badge: "Sci-Fi"
-  },
-  "Folk Literature": {
-    bg: "linear-gradient(135deg, #14532d 0%, #16a34a 50%, #4ade80 100%)",
-    accent: "#dcfce7",
-    icon: "🌾",
-    badge: "Folk"
-  },
-  "Classic Literature": {
-    bg: "linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a78bfa 100%)",
-    accent: "#ede9fe",
-    icon: "👑",
-    badge: "Classic"
   }
 };
 
 const DEFAULT_THEME = {
-  bg: "linear-gradient(135deg, #1f2937 0%, #4b5563 50%, #9ca3af 100%)",
+  bg: "linear-gradient(135deg, #1e1b4b 0%, #4f46e5 50%, #06b6d4 100%)",
   accent: "#f3f4f6",
-  icon: "📖",
-  badge: "Book"
+  icon: "💥",
+  badge: "Comic"
 };
 
 /**
@@ -89,7 +162,7 @@ export function OptimizedBookCover({
     if (!hasExternalImage) return;
 
     if (typeof window !== "undefined" && "IntersectionObserver" in window) {
-      // In lazy mode: rootMargin "0px" strictly waits until the card scrolls into the viewport
+      // Preload 300px ahead before element enters viewport for instant zero-lag rendering
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -105,7 +178,7 @@ export function OptimizedBookCover({
             }
           });
         },
-        { rootMargin: "0px", threshold: 0.05 }
+        { rootMargin: "300px", threshold: 0.01 }
       );
 
       if (containerRef.current) {
@@ -229,7 +302,7 @@ export function OptimizedBookCover({
             textShadow: "0 2px 4px rgba(0,0,0,0.6)"
           }}
         >
-          {theme.icon}
+          {book?.logo || theme.icon}
         </span>
         {showBadge && (
           <span
@@ -285,7 +358,7 @@ export function OptimizedBookCover({
               marginBottom: "6px"
             }}
           >
-            📖
+            {book?.logo || theme.icon || "📖"}
           </div>
 
           {showText && (
@@ -333,7 +406,7 @@ export function OptimizedBookCover({
         }}
       >
         <span style={{ fontWeight: 500, letterSpacing: "0.2px" }}>
-          {size === "sm" ? "Heritage" : "Tamil Heritage Collection"}
+          {size === "sm" ? "Comics" : "English Comics Collection"}
         </span>
         <span style={{ color: "#fbbf24" }}>★ ★ ★ ★ ★</span>
       </div>

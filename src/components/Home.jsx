@@ -77,7 +77,7 @@ function Home() {
       {/* Welcome Banner */}
       <div className="welcome-hero">
         <div className="welcome-text">
-          <h2 style={{ marginBottom: 0 }}>Vanakkam, {member?.name || "Aravind Kumar"}! 📖</h2>
+          <h2 style={{ marginBottom: 0 }}>Welcome, {member?.name || "Comics Fan"}! 💥</h2>
         </div>
         <div className="member-badge-chip">
           {memberLoading ? (
@@ -149,7 +149,7 @@ function Home() {
       {/* Book Catalog Header */}
       <div className="catalog-header">
         <div>
-          <h2>Tamil Book Catalog</h2>
+          <h2>English Comics & Graphic Novels Catalog</h2>
           <span className="catalog-count-pill">
             {books.length} {books.length === 1 ? "book" : "books"} loaded via REST API
           </span>

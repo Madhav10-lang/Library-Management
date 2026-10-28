@@ -13,11 +13,11 @@ export const AuthContext = createContext(null);
 
 export const DEFAULT_USERS = [
   {
-    name: "Aravind Kumar",
-    email: "aravind.kumar@gmail.com",
-    memberId: "AK-LIB-101",
+    name: "Member",
+    email: "member@sklibrary.org",
+    memberId: "SK-LIB-101",
     phone: "+91 98765 43210",
-    branch: "AK Central Library, Chennai",
+    branch: "SK Central Library, Chennai",
     membershipTier: "Gold Scholar",
     joinedDate: "2024-01-15",
     role: "Member"

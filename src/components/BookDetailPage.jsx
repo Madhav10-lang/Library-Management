@@ -155,7 +155,9 @@ function BookDetailPage() {
               <span className={`status-badge ${statusBadgeClass}`}>
                 {book.available ? "Available" : "Checked Out"}
               </span>
-              <h1 className="book-detail-title">{book.title}</h1>
+              <h1 className="book-detail-title">
+                {book.logo ? `${book.logo} ` : ""}{book.title}
+              </h1>
               <p className="book-detail-author">
                 By <strong>{book.author}</strong>
               </p>
@@ -167,6 +169,13 @@ function BookDetailPage() {
               <span className="spec-label">Category</span>
               <span className="spec-value">{book.category}</span>
             </div>
+
+            {book.level && (
+              <div className="spec-item">
+                <span className="spec-label">Language Level</span>
+                <span className="spec-value" style={{ color: "#38bdf8", fontWeight: 600 }}>{book.level}</span>
+              </div>
+            )}
 
             <div className="spec-item">
               <span className="spec-label">Published Year</span>
@@ -190,7 +199,7 @@ function BookDetailPage() {
 
           <div className="book-detail-desc">
             <h3>Description</h3>
-            <p>{book.description || "A revered literary masterpiece from Tamil heritage."}</p>
+            <p>{book.description || "An iconic graphic novel and comic masterpiece."}</p>
           </div>
 
           {/* Conditional Hold Notice */}

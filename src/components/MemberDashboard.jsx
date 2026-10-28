@@ -34,7 +34,7 @@ function MemberDashboard() {
           <span className="banner-icon">🏛️</span>
           <div>
             <h1>Member Dashboard</h1>
-            <p>Welcome, {member?.name || "Aravind Kumar"} ({member?.memberId || "AK-LIB-101"}) • {member?.branch || "AK Central Library"}</p>
+            <p>Welcome, {member?.name || "Member"} ({member?.memberId || "SK-LIB-101"}) • {member?.branch || "SK Central Library"}</p>
           </div>
         </div>
         <div className="banner-badge">

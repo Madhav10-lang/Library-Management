@@ -1,8 +1,3 @@
-/**
- * Optimization, Security, PWA & Caching Test Suite
- * Covers Requirements a, b, c, d, e, f
- */
-
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { apiCache } from "../../services/apiCache";
